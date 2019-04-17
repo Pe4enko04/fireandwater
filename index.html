@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Krestiki i noliki</title>
+</head>
+<body>
+<div style="background: black">
+<center><img onclick="setTurn('1')" id="1" src="blank.jpg"><img onclick="setTurn('2')" id="2" src="blank.jpg"><img onclick="setTurn('3')" id="3" src="blank.jpg"></center>
+
+<center><img onclick="setTurn('4')" id="4" src="blank.jpg"><img onclick="setTurn('5')" id="5" src="blank.jpg"><img onclick="setTurn('6')" id="6" src="blank.jpg"></center>
+
+<center><img onclick="setTurn('7')" id="7" src="blank.jpg"><img onclick="setTurn('8')" id="8" src="blank.jpg"><img onclick="setTurn('9')" id="9" src="blank.jpg"></center>
+</div>
+</body>
+<script>
+    let turn = false
+    let setTurn = (ids)=>{
+        console.log(document.getElementById(ids).src)
+        if(document.getElementById(ids).src.includes('blank.jpg')) {
+            turn = !turn
+            if (turn) {
+                document.getElementById(ids).src = 'fire.jpg'
+            }
+            else {
+                document.getElementById(ids).src = 'water.jpg'
+            }
+        }
+    }
+
+    </script>
+<style>
+    img{
+        width: 80px;
+        height: 80px;
+        margin: 20px;
+        border: solid 1px grey;
+        padding: 8px;
+        background: #b7ff06;}
+
+</style>
+</html>
